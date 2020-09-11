@@ -35,12 +35,12 @@ class App extends Component {
             <Router>
                 <div>
                     <Switch>
-                        <Route path="/" exact render={(props) => (<Home 
+                        <Route path="/inventorymw-a" exact render={(props) => (<Home 
                             getUserName={this.getUserName.bind(this)} 
                             getLastName={this.getLastName.bind(this)} 
                             getIDNum={this.getIDNum.bind(this)} 
                         />)} />
-                        <Route path="/borrow" render={(props) => (<Borrow usersInfo={usersData}/>)} />
+                        <Route path="/inventorymw-a/borrow" render={(props) => (<Borrow usersInfo={usersData}/>)} />
                     </Switch>
                 </div>
             </Router>
