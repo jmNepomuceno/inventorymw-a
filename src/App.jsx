@@ -32,10 +32,10 @@ class App extends Component {
             valIDNum: this.state.valIDNum,
         }
         return (
-            <Router>
+            <Router basename="/inventorymw-a">
                 <div>
                     <Switch>
-                        <Route basename="/inventorymw-a" exact render={(props) => (<Home 
+                        <Route path="/" exact render={(props) => (<Home 
                             getUserName={this.getUserName.bind(this)} 
                             getLastName={this.getLastName.bind(this)} 
                             getIDNum={this.getIDNum.bind(this)} 
