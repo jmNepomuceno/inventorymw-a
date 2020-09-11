@@ -627,6 +627,31 @@ aside{
   background:#242d32;
 }
 
+aside .side-bar-compo{
+  position: relative;
+  display:block;
+  width:100%;
+  height:9vh;
+}
+
+aside .side-bar-compo #side-bar-icon{
+  position:absolute;
+  top:20%;
+  left:5%;
+  width:15%;
+  height:50%;
+}
+
+aside .side-bar-compo h3{
+  position:absolute;
+  top:30%;
+  left:23%;
+  color:#d9d9d9;
+  font-family: Consolas, sans-serif;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
 .sub-main{
   position: absolute;
   top:8%;

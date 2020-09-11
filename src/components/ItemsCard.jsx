@@ -85,6 +85,8 @@ class ItemsCard extends Component {
         this.setState({isModalOpen: !this.state.isModalOpen})
         this.props.attr.pieces -= parseInt(this.refs.pcs_counter_ref.textContent)
         this.refs.pcs_counter_ref.textContent = 0
+
+        this.props.showAllBorrowRcp()
     }
 
     render() { 
