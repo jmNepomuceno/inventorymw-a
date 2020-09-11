@@ -211,7 +211,7 @@ class VisitorsSection extends Component {
                                 <div id="warning-icon-id" ref="warning_icon_id_ref"></div>
                             </div>
 
-                            <Link to="/borrow">
+                            <Link to="/borrow/items">
                                 <button 
                                     className="logIn-btn"
                                     ref={"btn_log_ref_" + this.props.attr.id}>
