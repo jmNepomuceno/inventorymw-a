@@ -32,7 +32,7 @@ class App extends Component {
             valIDNum: this.state.valIDNum,
         }
         return (
-            <Router>
+            <Router basename="inventorymw-a">
                 <div>
                     <Switch>
                         <Route path="/" exact render={(props) => (<Home 
