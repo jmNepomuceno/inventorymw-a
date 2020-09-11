@@ -35,7 +35,7 @@ class App extends Component {
             <Router basename="inventorymw-a">
                 <div>
                     <Switch>
-                        <Route path="/" exact render={(props) => (<Home 
+                        <Route path="/inventorymw-a" exact render={(props) => (<Home 
                             getUserName={this.getUserName.bind(this)} 
                             getLastName={this.getLastName.bind(this)} 
                             getIDNum={this.getIDNum.bind(this)} 
