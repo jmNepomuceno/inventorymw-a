@@ -18,7 +18,7 @@ class Header extends Component {
             <header className="sub-main-header">
 
                 <div className="visitors-name-header">
-                    <h1> {this.props.visitorsName} John Marvin </h1>
+                    <h1> {this.props.visitorsName} </h1>
                 </div>
 
                 <button id="log-out-btn" onClick={this.clickLogOut}>Log out</button>
