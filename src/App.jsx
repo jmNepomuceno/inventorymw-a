@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import {HashRouter as Router, Switch, Route} from 'react-router-dom'
 import Modal from 'react-modal'
 
 import Borrow from './components/Borrow'
@@ -32,7 +32,7 @@ class App extends Component {
             valIDNum: this.state.valIDNum,
         }
         return (
-            <Router basename="inventorymw-a">
+            <Router>
                 <div>
                     <Switch>
                         <Route path="/" exact render={(props) => (<Home 
