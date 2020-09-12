@@ -38,9 +38,10 @@ body{
 .home-header .title-div #school-logo{
   position: absolute;
   top:5%;
-  left:3%;
-  width:18%;
-  height:40%;
+  left:-47%;
+  width:45%;
+  height:100%;
+  opacity:0.5;
   /* top:5%;
   left:-40%; */
 }
@@ -48,9 +49,10 @@ body{
 .home-header .title-div #inventory-logo{
   position: absolute;
   top:5%;
-  right:3%;
-  width:18%;
-  height:40%;
+  right:-50%;
+  width:45%;
+  height:100%;
+  opacity:0.5;
 }
 
 /* nav{
@@ -792,6 +794,31 @@ aside .side-bar-compo h3{
   100%{
     filter:hue-rotate(360deg)
   }
+}
+
+.sub-main #empty-borrow-receipt-div{
+  position:relative;
+  width:100%;
+  height:100%;
+}
+
+.sub-main #empty-borrow-receipt-div img{
+  position:absolute;
+  width:25%;
+  height:50%;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  opacity:0.4;
+}
+
+.sub-main #empty-borrow-receipt-div h1{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  font-family: Arial, Helvetica, sans-serif;
+  opacity:0.6;
 }
 
 .modal-body{

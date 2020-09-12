@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Modal from 'react-modal'
 
 import Borrow from './components/Borrow'
+import Admin from './components/Admin'
 
 import Home from './Home'
 
@@ -41,6 +42,7 @@ class App extends Component {
                             getIDNum={this.getIDNum.bind(this)} 
                         />)} />
                         <Route path="/borrow" render={(props) => (<Borrow usersInfo={usersData}/>)} />
+                        <Route path="/admin" render={(props) => (<Admin/>)} />
                     </Switch>
                 </div>
             </Router>

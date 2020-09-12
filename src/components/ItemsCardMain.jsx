@@ -5,20 +5,13 @@ import ItemsCard from './ItemsCard'
 import itemsData from '../files/ItemsList'
 
 class ItemsCardMain extends Component {
-    state = {
-        had_borrow_receipts: false,
-    }
-
-
-    showAllBorrowRcp = () => {
-        this.setState({had_borrow_receipts: this.state.had_borrow_receipts})
-    }
-
+    state = {}
+    
     render() { 
         const ItemsCardComponents = itemsData.map(elem =>{
             return <ItemsCard key={elem.key} attr={elem} 
-                    usersInfo={this.props.attr.usersInfo} showAllBorrowRcp={this.showAllBorrowRcp}
-                    hadBorrowRcp={this.state.had_borrow_receipts}
+                    usersInfo={this.props.attr.usersInfo} showAllBorrowRcp={this.props.showAllBorrowRcp}
+                    hadBorrowRcp={this.props.had_borrow_receipts}
                 />
         })
         return (

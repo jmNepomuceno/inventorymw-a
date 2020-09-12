@@ -19,7 +19,24 @@ class VisitorsSection extends Component {
         this.setState({is_log_showed: !this.state.is_log_showed})
     }
 
-    checkAdminLogIn = () =>{
+    borrowClick = (id) =>{
+        this.setState({borrowClicked: !this.state.borrowClicked})
+
+        if(this.refs.first_name_ref.value.length > 0 && this.refs.last_name_ref.value.length > 0 &&
+            this.refs.id_name_ref.value.length > 0){
+
+                if(id === 1){
+                    this.refs.btn_log_ref_1.style.pointerEvents = "auto"
+                    this.refs.btn_log_ref_1.style.opacity = "1"
+                }
+                if(id === 3){
+                    this.refs.btn_log_ref_3.style.pointerEvents = "auto"
+                    this.refs.btn_log_ref_3.style.opacity = "1"
+                }
+            }
+    }
+
+    adminBtnShow = () =>{
         if(this.refs.username_ref.value !== 'Admin' && this.refs.password_ref.value !== 'Administrator'){
             this.refs.username_ref.style.border = '2px solid red'
             this.refs.password_ref.style.border = '2px solid red'
@@ -47,41 +64,8 @@ class VisitorsSection extends Component {
             this.refs.wrong_icon_u_ref.style.display = "none"
             this.refs.wrong_icon_p_ref.style.display = "none"
 
-            this.refs.username_ref.value = ''
-            this.refs.password_ref.value = ''
-
-            this.refs.admin_btn_logIn_ref.style.pointerEvents = "none"
-            this.refs.admin_btn_logIn_ref.style.opacity = "0.5"
-
-            alert('Welcome Admin')
-        }
-    }
-
-    borrowClick = (id) =>{
-        this.setState({borrowClicked: !this.state.borrowClicked})
-
-        if(this.refs.first_name_ref.value.length > 0 && this.refs.last_name_ref.value.length > 0 &&
-            this.refs.id_name_ref.value.length > 0){
-
-                if(id === 1){
-                    this.refs.btn_log_ref_1.style.pointerEvents = "auto"
-                    this.refs.btn_log_ref_1.style.opacity = "1"
-                }
-                if(id === 3){
-                    this.refs.btn_log_ref_3.style.pointerEvents = "auto"
-                    this.refs.btn_log_ref_3.style.opacity = "1"
-                }
-            }
-    }
-
-    adminBtnShow = () =>{
-        if(this.refs.username_ref.value.length > 0 && this.refs.password_ref.value.length > 0){
-                
             this.refs.admin_btn_logIn_ref.style.pointerEvents = "auto"
             this.refs.admin_btn_logIn_ref.style.opacity = "1"
-        }else{
-            this.refs.admin_btn_logIn_ref.style.pointerEvents = "none"
-            this.refs.admin_btn_logIn_ref.style.opacity = "0.5"
         }
     }
 
@@ -131,7 +115,11 @@ class VisitorsSection extends Component {
 
                             <div id="user-name-div">
                                 <div id="u-name-icon"></div>
-                                <input id="u-name" type="text" placeholder="Username" ref="username_ref"/>
+                                <input id="u-name" 
+                                    type="text" 
+                                    placeholder="Username" 
+                                    ref="username_ref"
+                                    onChange={this.adminBtnShow}/>
                                 <div id="wrong-icon-u" ref="wrong_icon_u_ref"></div>
                             </div>
 
@@ -142,19 +130,19 @@ class VisitorsSection extends Component {
                                     type="text" 
                                     placeholder="Password" 
                                     ref="password_ref" 
-                                    onKeyUp={this.adminBtnShow}
+                                    onChange={this.adminBtnShow}
                                 />
                                 <div id="wrong-icon-p" ref="wrong_icon_p_ref"></div>
                             </div>
 
-                            <button 
-                                    className="logIn-btn"
-                                    ref="admin_btn_logIn_ref"
-                                    onClick={this.checkAdminLogIn}>
-                                    
-                                <span> Log In </span>
-                            </button>
-
+                            <Link to="/admin">
+                                <button 
+                                        className="logIn-btn"
+                                        ref="admin_btn_logIn_ref">
+                                        
+                                    <span> Log In </span>
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </section>
