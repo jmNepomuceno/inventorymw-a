@@ -1,29 +1,31 @@
 {
   "files": {
-    "main.css": "/inventorymw-a/static/css/main.e6d7dd72.chunk.css",
-    "main.js": "/inventorymw-a/static/js/main.3c796bad.chunk.js",
-    "main.js.map": "/inventorymw-a/static/js/main.3c796bad.chunk.js.map",
+    "main.css": "/inventorymw-a/static/css/main.369fb3fd.chunk.css",
+    "main.js": "/inventorymw-a/static/js/main.9cf5a628.chunk.js",
+    "main.js.map": "/inventorymw-a/static/js/main.9cf5a628.chunk.js.map",
     "runtime-main.js": "/inventorymw-a/static/js/runtime-main.762b3069.js",
     "runtime-main.js.map": "/inventorymw-a/static/js/runtime-main.762b3069.js.map",
-    "static/js/2.703421aa.chunk.js": "/inventorymw-a/static/js/2.703421aa.chunk.js",
-    "static/js/2.703421aa.chunk.js.map": "/inventorymw-a/static/js/2.703421aa.chunk.js.map",
+    "static/js/2.9e8aa9e5.chunk.js": "/inventorymw-a/static/js/2.9e8aa9e5.chunk.js",
+    "static/js/2.9e8aa9e5.chunk.js.map": "/inventorymw-a/static/js/2.9e8aa9e5.chunk.js.map",
     "index.html": "/inventorymw-a/index.html",
-    "precache-manifest.d1d83acffde6c62e3aac5f6cb708d2b3.js": "/inventorymw-a/precache-manifest.d1d83acffde6c62e3aac5f6cb708d2b3.js",
+    "precache-manifest.bb8c4a716f35d3602f2531425dbc7219.js": "/inventorymw-a/precache-manifest.bb8c4a716f35d3602f2531425dbc7219.js",
     "service-worker.js": "/inventorymw-a/service-worker.js",
-    "static/css/main.e6d7dd72.chunk.css.map": "/inventorymw-a/static/css/main.e6d7dd72.chunk.css.map",
-    "static/js/2.703421aa.chunk.js.LICENSE.txt": "/inventorymw-a/static/js/2.703421aa.chunk.js.LICENSE.txt",
+    "static/css/main.369fb3fd.chunk.css.map": "/inventorymw-a/static/css/main.369fb3fd.chunk.css.map",
+    "static/js/2.9e8aa9e5.chunk.js.LICENSE.txt": "/inventorymw-a/static/js/2.9e8aa9e5.chunk.js.LICENSE.txt",
     "static/media/book.png": "/inventorymw-a/static/media/book.286ccc45.png",
     "static/media/bpsuLogo.png": "/inventorymw-a/static/media/bpsuLogo.d7589e15.png",
     "static/media/clean.png": "/inventorymw-a/static/media/clean.af310973.png",
+    "static/media/clipboard.png": "/inventorymw-a/static/media/clipboard.a43ff730.png",
     "static/media/index.css": "/inventorymw-a/static/media/user.8feff939.png",
     "static/media/collegeStudents.jpg": "/inventorymw-a/static/media/collegeStudents.a528dbc3.jpg",
     "static/media/inventory.png": "/inventorymw-a/static/media/inventory.b5c27f79.png",
-    "static/media/projector.png": "/inventorymw-a/static/media/projector.372a5363.png"
+    "static/media/projector.png": "/inventorymw-a/static/media/projector.372a5363.png",
+    "static/media/shop.png": "/inventorymw-a/static/media/shop.b3f1da70.png"
   },
   "entrypoints": [
     "static/js/runtime-main.762b3069.js",
-    "static/js/2.703421aa.chunk.js",
-    "static/css/main.e6d7dd72.chunk.css",
-    "static/js/main.3c796bad.chunk.js"
+    "static/js/2.9e8aa9e5.chunk.js",
+    "static/css/main.369fb3fd.chunk.css",
+    "static/js/main.9cf5a628.chunk.js"
   ]
 }
