@@ -210,7 +210,7 @@ class VisitorsSection extends Component {
                                 />
                                 <div id="warning-icon-id" ref="warning_icon_id_ref"></div>
                             </div>
-
+npm
                             <Link to="/borrow/items">
                                 <button 
                                     className="logIn-btn"
