@@ -42,7 +42,9 @@ function Borrow(props){
     });
 
     const showAllBorrowRcp = () => {
-        setState({had_borrow_receipts: !state.had_borrow_receipts})
+        if(state.had_borrow_receipts == false){
+            setState({had_borrow_receipts: !state.had_borrow_receipts})
+        }
     }
     
     const [receiptData, setReceiptData] = useState([])

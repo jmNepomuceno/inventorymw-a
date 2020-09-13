@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 
+import BorrowReceiptCards from './BorrowReceiptCards'
+
 import clipboardImg from '../imgs/clipboard.png'
 
 class BorrowReceipts extends Component {
     state = {  }
     render() {
-        console.log(this.props.receiptData)
         if(!this.props.had_borrow_receipts){
             return (
                 <div id="empty-borrow-receipt-div">
@@ -14,9 +15,13 @@ class BorrowReceipts extends Component {
                 </div>
             )
         } 
+
+        const borrowRcptCardsComponents = this.props.receiptData.map(elem =>{
+            return <BorrowReceiptCards attr={elem} />
+        })
         return (
-            <div>
-                <h1>meron</h1>
+            <div id="main-borrow-receipt-div">
+                {borrowRcptCardsComponents}
             </div>
         );
     }
