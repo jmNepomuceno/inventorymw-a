@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
-import Modal from 'react-modal'
 
 import Borrow from './components/Borrow'
 import Admin from './components/Admin'

@@ -9,9 +9,9 @@ class Title extends Component {
         return (
             <header className="home-header">
                 <div className="title-div">
-                    <img src={schoolLogo} id="school-logo" />
+                    <img alt="school logo" src={schoolLogo} id="school-logo" />
                     <span>I</span>NVENTORY <span>M</span>ANAGEMENT <span>W</span>EBSITE
-                    <img src={inventoryLogo} id="inventory-logo" />
+                    <img alt="inventory logo" src={inventoryLogo} id="inventory-logo" />
                 </div>
                 
             </header>

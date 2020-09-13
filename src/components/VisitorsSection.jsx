@@ -93,7 +93,7 @@ class VisitorsSection extends Component {
                 <section className="visitors-section">
                     <div className="inner-visitors-section">
                         <div className="visitors-card" ref="visitorsCardRef">
-                            <img src={imgUrlStyles[this.props.attr.id]} ref="ref_img" />
+                            <img src={imgUrlStyles[this.props.attr.id]} ref="ref_img" alt="card logo" />
                             <label>
                                 <h3> {visitorsCardTitle[this.props.attr.id]} </h3>
                                 <p> {visitorsCardPara[this.props.attr.id]} </p>
@@ -152,7 +152,7 @@ class VisitorsSection extends Component {
                 <section className="visitors-section">
                     <div className="inner-visitors-section">
                         <div className="visitors-card" ref="visitorsCardRef">
-                            <img src={imgUrlStyles[this.props.attr.id]} ref="ref_img"/>
+                            <img src={imgUrlStyles[this.props.attr.id]} ref="ref_img" alt="card logo"/>
                             <label>
                                 <h3> {visitorsCardTitle[this.props.attr.id]} </h3>
                                 <p>{visitorsCardPara[this.props.attr.id]}</p>

@@ -25,7 +25,7 @@ class ItemsCard extends Component {
         claimMns = claimTime.getMinutes()
         
         let timeToClaim
-        if(claimHours == 11 || claimHours == 12){
+        if(claimHours === 11 || claimHours === 12){
             claimHours += 2
         }else{
             claimHours += 1
@@ -35,7 +35,7 @@ class ItemsCard extends Component {
             claimHours = claimHours - 12
         }
         
-        if(claimMns.toString().length == 1){
+        if(claimMns.toString().length === 1){
             claimMns = "0" + claimMns.toString()    
         }
         timeToClaim = claimHours + ":" + claimMns + ((claimHours >= 12) ? 'am' : 'pm')
@@ -47,9 +47,8 @@ class ItemsCard extends Component {
             isModalOpen: false,
             currentDate: date,
             currentTime: time,
-            dateToReturn: (this.props.attr.daysToReturn == 0) ? 'Today' : 'Tomorrow',
-            timeToReturn:'4:00pm',
-            timeToClaim: timeToClaim,
+            dateToReturn: (this.props.attr.daysToReturn === 0) ? 'Today' : 'Tomorrow',
+            timeToClaim: timeToClaim
         }
     }
 
@@ -64,7 +63,7 @@ class ItemsCard extends Component {
         if(parseInt(this.refs.pcs_counter_ref.textContent) >= 1){
             this.refs.pcs_counter_ref.textContent = parseInt(this.refs.pcs_counter_ref.textContent) - 1
         }
-        if(parseInt(this.refs.pcs_counter_ref.textContent) == 0){
+        if(parseInt(this.refs.pcs_counter_ref.textContent) === 0){
             this.refs.confirm_btn_ref.style.pointerEvents = "none"
         this.refs.confirm_btn_ref.style.opacity = "0.5"
         }
@@ -87,11 +86,19 @@ class ItemsCard extends Component {
         this.refs.pcs_counter_ref.textContent = 0
 
         this.props.showAllBorrowRcp()
+        this.props.addIndex()
 
-        this.props.addReceiptData(
-            this.refs.item_name_ref.textContent,
-            this.refs.item_pcs_ref.textContent,
-            this.refs.date_borrowed_ref.textContent
+        this.props.addReceiptData({
+                userFName: this.refs.user_fname_ref.textContent,
+                userLName: this.refs.user_lname_ref.textContent,
+                userIdNum: this.refs.user_idNum_ref.textContent,
+                itemName: this.refs.item_name_ref.textContent,
+                itemPcs: this.refs.item_pcs_ref.textContent,
+                dateBorrowed: this.refs.date_borrowed_ref.textContent,
+                timeBorrowed: this.refs.time_borrowed_ref.textContent,
+                dateReturn: this.refs.date_return_ref.textContent,
+                timeClaim: this.refs.time_claim_ref.textContent
+            }      
         )
     }
 
@@ -124,7 +131,7 @@ class ItemsCard extends Component {
                     <h2 className="item-card-name">{this.props.attr.name}</h2>
                     <p className="item-card-pcs">Available Pcs: {this.props.attr.pieces} </p>
 
-                    <img className="items-card-img" src={imgPath["item_img_" + this.props.attr.imgId]} />
+                    <img className="items-card-img" alt="items icon" src={imgPath["item_img_" + this.props.attr.imgId]} />
 
                     <div className="items-card-bottom" 
                         style={
@@ -151,15 +158,15 @@ class ItemsCard extends Component {
                                         <tbody>
                                             <tr>
                                                 <td><h1>First Name</h1></td>
-                                                <td> {this.props.usersInfo.valUserName} </td>
+                                                <td ref="user_fname_ref"> {this.props.usersInfo.valUserName} </td>
                                             </tr>
                                             <tr>
                                                 <td><h1>Last Name</h1></td>
-                                                <td> {this.props.usersInfo.valLastName} </td>
+                                                <td ref="user_lname_ref"> {this.props.usersInfo.valLastName} </td>
                                             </tr>
                                             <tr>
                                                 <td><h1>Student ID no.</h1></td>
-                                                <td> {this.props.usersInfo.valIDNum} </td>
+                                                <td ref="user_idNum_ref"> {this.props.usersInfo.valIDNum} </td>
                                             </tr>
                                             <tr>
                                                 <td><h1>Item Borrowed</h1></td>
@@ -175,7 +182,7 @@ class ItemsCard extends Component {
                                             </tr>
                                             <tr>
                                                 <td><h1>Time Borrowed</h1></td>
-                                                <td> {this.state.currentTime} </td>
+                                                <td ref="time_borrowed_ref"> {this.state.currentTime} </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -197,11 +204,11 @@ class ItemsCard extends Component {
                                             </tr>
                                             <tr>
                                                 <td><h1>Date to Return</h1></td>
-                                                <td> {this.state.dateToReturn} </td>
+                                                <td ref="date_return_ref"> {this.state.dateToReturn} </td>
                                             </tr>
                                             <tr>
                                                 <td><h1>Time to Return</h1></td>
-                                                <td> {this.state.timeToReturn} </td>
+                                                <td> Before 4:00pm </td>
                                             </tr>
                                             <tr>
                                                 <td><h1>Penalty 1 Day</h1></td>
@@ -228,7 +235,7 @@ class ItemsCard extends Component {
                                         <tbody>
                                             <tr>
                                                 <td><h1>Time to Claim</h1></td>
-                                                <td> {this.state.timeToClaim} - 3:00pm </td>
+                                                <td ref="time_claim_ref"> {this.state.timeToClaim} - 3:00pm </td>
                                             </tr>
                                             <tr>
                                                 <td><h1>Where to Claim</h1></td>

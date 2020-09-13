@@ -15,7 +15,7 @@ class SideBarsComponents extends Component {
         return (
             <Link to={this.props.attr.linkUrl}>
                 <div className="side-bar-compo">
-                    <img id="side-bar-icon" src={iconUrls[this.props.attr.id]} />
+                    <img id="side-bar-icon" alt="side bar icon" src={iconUrls[this.props.attr.id]} />
                     <h3> {this.props.attr.name} </h3>
                 </div>
             </Link>
