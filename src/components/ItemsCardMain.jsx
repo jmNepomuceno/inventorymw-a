@@ -11,7 +11,7 @@ class ItemsCardMain extends Component {
         const ItemsCardComponents = itemsData.map(elem =>{
             return <ItemsCard key={elem.key} attr={elem} 
                     usersInfo={this.props.attr.usersInfo} showAllBorrowRcp={this.props.showAllBorrowRcp}
-                    hadBorrowRcp={this.props.had_borrow_receipts}
+                    hadBorrowRcp={this.props.had_borrow_receipts} addReceiptData={this.props.addReceiptData}
                 />
         })
         return (

@@ -87,6 +87,12 @@ class ItemsCard extends Component {
         this.refs.pcs_counter_ref.textContent = 0
 
         this.props.showAllBorrowRcp()
+
+        this.props.addReceiptData(
+            this.refs.item_name_ref.textContent,
+            this.refs.item_pcs_ref.textContent,
+            this.refs.date_borrowed_ref.textContent
+        )
     }
 
     render() { 
@@ -157,15 +163,15 @@ class ItemsCard extends Component {
                                             </tr>
                                             <tr>
                                                 <td><h1>Item Borrowed</h1></td>
-                                                <td> {this.state.userBorrowedItemName} </td>
+                                                <td ref="item_name_ref"> {this.state.userBorrowedItemName} </td>
                                             </tr>
                                             <tr>
                                                 <td><h1>Item Pieces</h1></td>
-                                                <td> {this.state.userBorrowedItemPcs} </td>
+                                                <td ref="item_pcs_ref"> {this.state.userBorrowedItemPcs} </td>
                                             </tr>
                                             <tr>
                                                 <td><h1>Date Borrowed</h1></td>
-                                                <td> {this.state.currentDate} </td>
+                                                <td ref="date_borrowed_ref"> {this.state.currentDate} </td>
                                             </tr>
                                             <tr>
                                                 <td><h1>Time Borrowed</h1></td>

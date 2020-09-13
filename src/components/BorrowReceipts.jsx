@@ -5,7 +5,7 @@ import clipboardImg from '../imgs/clipboard.png'
 class BorrowReceipts extends Component {
     state = {  }
     render() {
-        console.log(this.props.had_borrow_receipts)
+        console.log(this.props.receiptData)
         if(!this.props.had_borrow_receipts){
             return (
                 <div id="empty-borrow-receipt-div">
