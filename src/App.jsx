@@ -69,17 +69,52 @@ function App(){
         setState({valIDNum: e.target.value})
     }
 
-    const [students , setStudents] = useState([])
+    const [studentsData , setStudents] = useState([])
 
     const addStudents = (info) =>{
-        setStudents([...students, {
+        setStudents([...studentsData, {
             firstName: info.firstName,
             surName: info.lastName,
-            studentID: info.studentID
+            studentID: info.studentID,
+            Laptop: 0,
+            Projector: 0,
+            Marker: 0,
+            Books: 0,
+            Eraser: 0
         }])
     }
 
-    console.log(students);
+    const [itemsData, setitemsData] = useState({
+            Laptop: 20,
+            Projector: 15,
+            Marker: 50,
+            Books: 100,
+            Eraser: 30
+    })
+
+    const decItemsData = (item, pcs) =>{
+        if(item === "Laptop"){
+            setitemsData({...itemsData , Laptop: itemsData.Laptop - pcs})
+
+        }else if(item === "Projector"){
+            setitemsData({...itemsData , Projector: itemsData.Projector - pcs})
+
+
+        }else if(item === "Marker"){
+            setitemsData({...itemsData , Marker: itemsData.Marker - pcs})
+
+
+        }else if(item === "Books"){
+            setitemsData({...itemsData , Books: itemsData.Books - pcs})
+
+
+        }else if(item === "Eraser"){
+            setitemsData({...itemsData , Eraser: itemsData.Eraser - pcs})
+
+
+        }
+        
+    }
 
     const usersData = {
         valUserName: state.valUserName,
@@ -97,7 +132,14 @@ function App(){
                         getIDNum={getIDNum} 
                         addStudents = {addStudents}
                     />)} />
-                    <Route path="/borrow" render={(props) => (<Borrow usersInfo={usersData}/>)} />
+                    <Route path="/borrow" render={(props) => (
+                        <Borrow 
+                            usersInfo={usersData} 
+                            studentsData={studentsData} 
+                            itemsData={itemsData}
+                            decItemsData={decItemsData}
+                        />)} 
+                    />
                     <Route path="/admin" render={(props) => (<Admin/>)} />
                 </Switch>
             </div>

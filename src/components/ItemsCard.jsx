@@ -82,7 +82,8 @@ class ItemsCard extends Component {
     finalConfirmedBorrow = (item) =>{
         alert('Successfully Borrowed Request. Thank you for using our Site.')
         this.setState({isModalOpen: !this.state.isModalOpen})
-        this.props.attr.pieces -= parseInt(this.refs.pcs_counter_ref.textContent)
+        
+        this.props.decItemsData(item , parseInt(this.refs.pcs_counter_ref.textContent))
         this.refs.pcs_counter_ref.textContent = 0
 
         this.props.showAllBorrowRcp()
@@ -100,6 +101,8 @@ class ItemsCard extends Component {
                 timeClaim: this.refs.time_claim_ref.textContent
             }      
         )
+
+        
     }
 
     render() { 
@@ -129,7 +132,7 @@ class ItemsCard extends Component {
                     
                     {/* card content */}
                     <h2 className="item-card-name">{this.props.attr.name}</h2>
-                    <p className="item-card-pcs">Available Pcs: {this.props.attr.pieces} </p>
+                    <p className="item-card-pcs">Available Pcs: {this.props.itemsData[this.props.attr.name]} </p>
 
                     <img className="items-card-img" alt="items icon" src={imgPath["item_img_" + this.props.attr.imgId]} />
 

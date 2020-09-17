@@ -47,12 +47,13 @@ function Borrow(props){
                      <Switch>
                          <Route path="/borrow/items" exact render={() => (
                              <ItemsCardMain attr={props} had_borrow_receipts={state.had_borrow_receipts}
-                             showAllBorrowRcp={showAllBorrowRcp} addReceiptData={addReceiptData} addIndex={addIndex}/>
+                             showAllBorrowRcp={showAllBorrowRcp} addReceiptData={addReceiptData} addIndex={addIndex}
+                             itemsData={props.itemsData} decItemsData={props.decItemsData} />
                          )} />
 
                          <Route path="/borrow/borrow-receipt" exact render={() => (
                              <BorrowReceipts had_borrow_receipts={state.had_borrow_receipts}
-                                receiptData={receiptData} />
+                                receiptData={receiptData} studentsData={props.studentsData}  />
                          )} />
                      </Switch>
                  </main>
