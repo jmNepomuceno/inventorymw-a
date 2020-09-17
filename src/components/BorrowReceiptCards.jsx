@@ -130,6 +130,14 @@ class BorrowReceiptCards extends Component {
                                 only on the given time, if exceeds on the alloted time, the borrow request will be gone. Make sure to
                                 have a copy of this receipt.
                             </p>
+
+                            <button id="exit-viewing-rcpt-btn" onClick={this.closeModal}>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                EXIT
+                            </button>
                         </div>
                     </div>
                 </Modal>

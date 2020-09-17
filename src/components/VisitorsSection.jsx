@@ -69,6 +69,14 @@ class VisitorsSection extends Component {
         }
     }
 
+    addStudInfo = () =>{
+        this.props.usersInfo.addStudents({
+            firstName: this.refs.first_name_ref.value,
+            lastName: this.refs.last_name_ref.value,
+            studentID: this.refs.id_name_ref.value
+        })
+    }
+
     render() {
         const imgUrlStyles = {
             1: teachersBackground,
@@ -202,7 +210,8 @@ class VisitorsSection extends Component {
                             <Link to="/borrow/items">
                                 <button 
                                     className="logIn-btn"
-                                    ref={"btn_log_ref_" + this.props.attr.id}>
+                                    ref={"btn_log_ref_" + this.props.attr.id}
+                                    onClick={this.addStudInfo}>
                                     <span> Log In </span>
                                 </button>
                             </Link>
