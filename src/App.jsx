@@ -13,7 +13,7 @@ function App(){
     const addIndex = () =>{
         setIndex(index + 1)
     }
-    //console.log(index)
+    console.log(index)
     const [studentsData , setStudents] = useState([])
 
     const addStudents = (info) =>{
