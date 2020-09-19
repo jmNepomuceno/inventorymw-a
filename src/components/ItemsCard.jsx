@@ -87,7 +87,6 @@ class ItemsCard extends Component {
         this.refs.pcs_counter_ref.textContent = 0
 
         this.props.showAllBorrowRcp()
-        this.props.addIndex()
 
         this.props.addReceiptData({
                 userFName: this.refs.user_fname_ref.textContent,
@@ -161,15 +160,15 @@ class ItemsCard extends Component {
                                         <tbody>
                                             <tr>
                                                 <td><h1>First Name</h1></td>
-                                                <td ref="user_fname_ref"> {this.props.usersInfo.valUserName} </td>
+                                                <td ref="user_fname_ref"> {this.props.studentsData[this.props.index].firstName} </td>
                                             </tr>
                                             <tr>
                                                 <td><h1>Last Name</h1></td>
-                                                <td ref="user_lname_ref"> {this.props.usersInfo.valLastName} </td>
+                                                <td ref="user_lname_ref"> {this.props.studentsData[this.props.index].surName} </td>
                                             </tr>
                                             <tr>
                                                 <td><h1>Student ID no.</h1></td>
-                                                <td ref="user_idNum_ref"> {this.props.usersInfo.valIDNum} </td>
+                                                <td ref="user_idNum_ref"> {this.props.studentsData[this.props.index].studentID} </td>
                                             </tr>
                                             <tr>
                                                 <td><h1>Item Borrowed</h1></td>

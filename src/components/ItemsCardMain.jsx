@@ -10,9 +10,10 @@ class ItemsCardMain extends Component {
     render() { 
         const ItemsCardComponents = itemsData.map(elem =>{
             return <ItemsCard key={elem.key} attr={elem} 
-                    usersInfo={this.props.attr.usersInfo} showAllBorrowRcp={this.props.showAllBorrowRcp}
+                    showAllBorrowRcp={this.props.showAllBorrowRcp}
                     hadBorrowRcp={this.props.had_borrow_receipts} addReceiptData={this.props.addReceiptData}
-                    addIndex={this.props.addIndex} itemsData={this.props.itemsData} decItemsData={this.props.decItemsData}/>
+                    itemsData={this.props.itemsData} decItemsData={this.props.decItemsData}
+                    index={this.props.index} studentsData={this.props.studentsData}/>
         })
         return (
             <div>

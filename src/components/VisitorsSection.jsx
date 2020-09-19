@@ -75,6 +75,8 @@ class VisitorsSection extends Component {
             lastName: this.refs.last_name_ref.value,
             studentID: this.refs.id_name_ref.value
         })
+
+        this.props.usersInfo.addIndex()
     }
 
     render() {
@@ -123,7 +125,7 @@ class VisitorsSection extends Component {
 
                             <div id="user-name-div">
                                 <div id="u-name-icon"></div>
-                                <input id="u-name" 
+                                <input className="u-name" 
                                     type="text" 
                                     placeholder="Username" 
                                     ref="username_ref"
@@ -134,7 +136,7 @@ class VisitorsSection extends Component {
                             <div id="pass-name-div">
                                 <div id="p-name-icon"></div>
                                 <input 
-                                    id="p-name" 
+                                    className="p-name" 
                                     type="text" 
                                     placeholder="Password" 
                                     ref="password_ref" 
@@ -181,28 +183,25 @@ class VisitorsSection extends Component {
 
                             <div id="first-name-div">
                                 <div id="f-name-icon"></div>
-                                <input id="f-name" type="text" placeholder="First Name" 
-                                ref="first_name_ref" 
-                                onChange={this.props.usersInfo.getUserName}/>
+                                <input className="f-name" type="text" placeholder="First Name" 
+                                ref="first_name_ref"/>
                                 <div id="warning-icon-f" ref="warning_icon_f_ref"></div>
                             </div>
 
                             <div id="last-name-div">
                                 <div id="l-name-icon"></div>
-                                <input id="l-name" type="text" placeholder="Last Name" 
-                                ref="last_name_ref" 
-                                onChange={this.props.usersInfo.getLastName}/>
+                                <input className="l-name" type="text" placeholder="Last Name" 
+                                ref="last_name_ref" />
                                 <div id="warning-icon-l" ref="warning_icon_l_ref"></div>
                             </div>
 
                             <div id="id-name-div">
                                 <div id="id-name-icon"></div>
                                 <input 
-                                    id="id-name" 
+                                    className="id-name" 
                                     type="text" 
                                     placeholder="ID Number" 
                                     ref="id_name_ref"
-                                    onChange={this.props.usersInfo.getIDNum}
                                 />
                                 <div id="warning-icon-id" ref="warning_icon_id_ref"></div>
                             </div>

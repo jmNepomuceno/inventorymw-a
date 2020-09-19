@@ -19,16 +19,11 @@ function Borrow(props){
     }
     
     const [receiptData, setReceiptData] = useState([])
-    const [index, setIndex] = useState(0)
-
-    const addIndex = () =>{
-        setIndex(index + 1)
-    }
 
     const addReceiptData = (info) =>{
         setReceiptData([...receiptData, {
-            id: index,
-            userFName: info.userFname,
+            id: props.index,
+            userFName: info.userFName,
             userLName: info.userLName,
             userIdNum: info.userIdNum,
             itemName: info.itemName,
@@ -41,14 +36,15 @@ function Borrow(props){
     }
     return(
         <div>
-                 <Header visitorsName={props.usersInfo.valUserName}/>
+                 <Header visitorsName={props.studentsData[props.index].firstName}/>
                  <SideBar />
                  <main className="sub-main">
                      <Switch>
                          <Route path="/borrow/items" exact render={() => (
                              <ItemsCardMain attr={props} had_borrow_receipts={state.had_borrow_receipts}
-                             showAllBorrowRcp={showAllBorrowRcp} addReceiptData={addReceiptData} addIndex={addIndex}
-                             itemsData={props.itemsData} decItemsData={props.decItemsData} />
+                             showAllBorrowRcp={showAllBorrowRcp} addReceiptData={addReceiptData}
+                             itemsData={props.itemsData} decItemsData={props.decItemsData} 
+                             index={props.index} studentsData={props.studentsData} />
                          )} />
 
                          <Route path="/borrow/borrow-receipt" exact render={() => (

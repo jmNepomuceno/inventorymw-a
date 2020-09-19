@@ -6,69 +6,14 @@ import Admin from './components/Admin'
 
 import Home from './Home'
 
-// class App extends Component {
-//     state = {
-//         valUserName: '',
-//         valLastName: '',
-//         valIDNum: ''
-//     }
-
-//     getUserName(e){
-//         this.setState({valUserName: e.target.value})
-//     }
-
-//     getLastName(e){
-//         this.setState({valLastName: e.target.value})
-//     }
-
-//     getIDNum(e){
-//         this.setState({valIDNum: e.target.value})
-//     }
-
-//     render() { 
-//         const usersData = {
-//             valUserName: this.state.valUserName,
-//             valLastName: this.state.valLastName,
-//             valIDNum: this.state.valIDNum,
-//         }
-//         return (
-//             <Router basename="inventorymw-a">
-//                 <div>
-//                     <Switch>
-//                         <Route path="/" exact render={(props) => (<Home 
-//                             getUserName={this.getUserName.bind(this)} 
-//                             getLastName={this.getLastName.bind(this)} 
-//                             getIDNum={this.getIDNum.bind(this)} 
-//                         />)} />
-//                         <Route path="/borrow" render={(props) => (<Borrow usersInfo={usersData}/>)} />
-//                         <Route path="/admin" render={(props) => (<Admin/>)} />
-//                     </Switch>
-//                 </div>
-//             </Router>
-//         );
-//     }
-// }
-
 function App(){
 
-    const [state, setState] = useState({
-        valUserName: '',
-        valLastName: '',
-        valIDNum: ''
-    });
+    const [index, setIndex] = useState(-1)
 
-    const getUserName = (e) =>{
-        setState({valUserName: e.target.value})
+    const addIndex = () =>{
+        setIndex(index + 1)
     }
-
-    const getLastName = (e) =>{
-        setState({valLastName: e.target.value})
-    }
-
-    const getIDNum = (e) =>{
-        setState({valIDNum: e.target.value})
-    }
-
+    //console.log(index)
     const [studentsData , setStudents] = useState([])
 
     const addStudents = (info) =>{
@@ -82,7 +27,9 @@ function App(){
             Books: 0,
             Eraser: 0
         }])
-    }
+    } 
+
+    //console.log(studentsData[0])
 
     const [itemsData, setitemsData] = useState({
             Laptop: 20,
@@ -116,26 +63,19 @@ function App(){
         
     }
 
-    const usersData = {
-        valUserName: state.valUserName,
-        valLastName: state.valLastName,
-        valIDNum: state.valIDNum,
-    }
 
     return (
         <Router basename="inventorymw-a">
             <div>
                 <Switch>
                     <Route path="/" exact render={(props) => (<Home 
-                        getUserName={getUserName} 
-                        getLastName={getLastName} 
-                        getIDNum={getIDNum} 
                         addStudents = {addStudents}
+                        addIndex={addIndex}
                     />)} />
                     <Route path="/borrow" render={(props) => (
-                        <Borrow 
-                            usersInfo={usersData} 
-                            studentsData={studentsData} 
+                        <Borrow
+                            index={index}
+                            studentsData={studentsData}
                             itemsData={itemsData}
                             decItemsData={decItemsData}
                         />)} 

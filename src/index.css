@@ -313,7 +313,7 @@ nav #marker{
   z-index: 1;
 }
 
-#f-name, #u-name{
+.f-name, .u-name{
   position: absolute;
   top:23%;
   left:5%;
@@ -330,7 +330,7 @@ nav #marker{
   opacity: 0.8;
 }
 
-#p-name, #l-name{
+.p-name, .l-name{
   position: absolute;
   top:41%;
   left:5%;
@@ -347,7 +347,7 @@ nav #marker{
   opacity: 0.8;
 }
 
-#id-name{
+.id-name{
   position: absolute;
   top:59%;
   left:5%;
@@ -364,7 +364,7 @@ nav #marker{
   opacity: 0.8;
 }
 
-#f-name:focus, #u-name:focus , #p-name:focus, #l-name:focus, #id-name:focus{
+.f-name:focus, .u-name:focus , .p-name:focus, .l-name:focus, .id-name:focus{
   outline: none;
 }
 
