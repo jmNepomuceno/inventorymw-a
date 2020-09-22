@@ -70,13 +70,14 @@ class VisitorsSection extends Component {
     }
 
     addStudInfo = () =>{
+        this.props.usersInfo.addIndex(this.refs.id_name_ref.value)
+
         this.props.usersInfo.addStudents({
+            idIndex: this.props.usersInfo.index,
             firstName: this.refs.first_name_ref.value,
             lastName: this.refs.last_name_ref.value,
-            studentID: this.refs.id_name_ref.value
-        })
-
-        this.props.usersInfo.addIndex()
+            studentID: this.refs.id_name_ref.value,
+        })  
     }
 
     render() {

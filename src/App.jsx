@@ -9,27 +9,61 @@ import Home from './Home'
 function App(){
 
     const [index, setIndex] = useState(-1)
+    const [hadAlready, setHadAlready] = useState(false)
+    const [indexToPass, setIndexToPass] = useState(0)
 
-    const addIndex = () =>{
-        setIndex(index + 1)
+    const addIndex = (id) =>{
+        if(index >= 0){
+            for(let i = 0; i <= index; ++i){
+                if(studentsData[i].studentID === id){
+                    // setHadAlready(!hadAlready, () => {
+                    //     console.log(hadAlready)
+                    // })
+                    setHadAlready(!hadAlready)
+                    //console.log(hadAlready)
+                    break  
+                }
+            } 
+
+            if(!hadAlready){
+                console.log("wala")
+                setIndex(index + 1)
+                setIndexToPass(index + 1)
+            }else{
+                console.log("meron")
+                for(let elem of studentsData){
+                    if(elem.studentID === id){
+                        setIndexToPass(elem.idIndex)
+                        break
+                    }
+                }
+            }
+        }else{
+            setIndex(index + 1)
+        }
     }
-    console.log(index)
     const [studentsData , setStudents] = useState([])
 
-    const addStudents = (info) =>{
-        setStudents([...studentsData, {
-            firstName: info.firstName,
-            surName: info.lastName,
-            studentID: info.studentID,
-            Laptop: 0,
-            Projector: 0,
-            Marker: 0,
-            Books: 0,
-            Eraser: 0
-        }])
+    const addStudents = (info) =>{  
+        
+        if(index > -1){
+            if(!hadAlready){
+                setStudents([...studentsData, {
+                    idIndex: info.idIndex + 1,
+                    firstName: info.firstName,
+                    surName: info.lastName,
+                    studentID: info.studentID
+                }])
+            }
+        }else{
+            setStudents([...studentsData, {
+                idIndex: info.idIndex + 1,
+                firstName: info.firstName,
+                surName: info.lastName,
+                studentID: info.studentID
+            }])
+        } 
     } 
-
-    //console.log(studentsData[0])
 
     const [itemsData, setitemsData] = useState({
             Laptop: 20,
@@ -63,21 +97,55 @@ function App(){
         
     }
 
+    const [had_borrow_receipts, setHad_borrow_receipts] = useState(false);
+
+    const showAllBorrowRcp = () => {
+        if(had_borrow_receipts === false){
+            setHad_borrow_receipts(true)
+        }
+    }
+
+    const [receiptData, setReceiptData] = useState([])
+
+    const addReceiptData = (info) =>{
+    
+        setReceiptData([...receiptData, {
+            id: index,
+            userFName: info.userFName,
+            userLName: info.userLName,
+            userIdNum: info.userIdNum,
+            itemName: info.itemName,
+            itemPcs: info.itemPcs,
+            dateBorrowed: info.dateBorrowed,
+            timeBorrowed: info.timeBorrowed,
+            dateReturn: info.dateReturn,
+            timeClaim: info.timeClaim
+        }])
+    }
+
+    console.log(studentsData)
+    console.log(index)
 
     return (
         <Router basename="inventorymw-a">
             <div>
                 <Switch>
                     <Route path="/" exact render={(props) => (<Home 
-                        addStudents = {addStudents}
                         addIndex={addIndex}
+                        studentsData={studentsData}
+                        addStudents = {addStudents}
+                        index={index}
                     />)} />
                     <Route path="/borrow" render={(props) => (
                         <Borrow
                             index={index}
-                            studentsData={studentsData}
+                            studentsData={studentsData[indexToPass]}
                             itemsData={itemsData}
                             decItemsData={decItemsData}
+                            had_borrow_receipts={had_borrow_receipts}
+                            showAllBorrowRcp={showAllBorrowRcp}
+                            receiptData={receiptData}
+                            addReceiptData={addReceiptData}
                         />)} 
                     />
                     <Route path="/admin" render={(props) => (<Admin/>)} />

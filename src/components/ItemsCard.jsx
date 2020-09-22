@@ -99,9 +99,7 @@ class ItemsCard extends Component {
                 dateReturn: this.refs.date_return_ref.textContent,
                 timeClaim: this.refs.time_claim_ref.textContent
             }      
-        )
-
-        
+        ) 
     }
 
     render() { 
@@ -121,6 +119,10 @@ class ItemsCard extends Component {
             item_img_4: bookImg,
             item_img_5: eraserImg
         }
+
+        const firstName = this.props.studentsData.firstName
+        const surName = this.props.studentsData.surName
+        const studentID = this.props.studentsData.studentID
 
         return (
                 <div className="items-card" 
@@ -160,15 +162,15 @@ class ItemsCard extends Component {
                                         <tbody>
                                             <tr>
                                                 <td><h1>First Name</h1></td>
-                                                <td ref="user_fname_ref"> {this.props.studentsData[this.props.index].firstName} </td>
+                                                <td ref="user_fname_ref"> {firstName} </td>
                                             </tr>
                                             <tr>
                                                 <td><h1>Last Name</h1></td>
-                                                <td ref="user_lname_ref"> {this.props.studentsData[this.props.index].surName} </td>
+                                                <td ref="user_lname_ref"> {surName} </td>
                                             </tr>
                                             <tr>
                                                 <td><h1>Student ID no.</h1></td>
-                                                <td ref="user_idNum_ref"> {this.props.studentsData[this.props.index].studentID} </td>
+                                                <td ref="user_idNum_ref"> {studentID} </td>
                                             </tr>
                                             <tr>
                                                 <td><h1>Item Borrowed</h1></td>
