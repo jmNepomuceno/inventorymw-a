@@ -8,6 +8,7 @@ import ItemsCardMain from './ItemsCardMain'
 
 function Borrow(props){
     let visitorsName = props.studentsData.firstName
+    let receiptsDataVar = props.receiptData
     return(
         <div>
                  <Header visitorsName={visitorsName}/>
@@ -23,7 +24,7 @@ function Borrow(props){
 
                          <Route path="/borrow/borrow-receipt" exact render={() => (
                              <BorrowReceipts had_borrow_receipts={props.had_borrow_receipts}
-                                receiptData={props.receiptData} studentsData={props.studentsData}  />
+                                receiptData={receiptsDataVar} studentsData={props.studentsData}  />
                          )} />
                      </Switch>
                  </main>

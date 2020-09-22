@@ -109,22 +109,41 @@ function App(){
     const [receiptData, setReceiptData] = useState([])
 
     const addReceiptData = (info) =>{
-    
-        setReceiptData([...receiptData, {
-            id: index,
-            userFName: info.userFName,
-            userLName: info.userLName,
-            userIdNum: info.userIdNum,
-            itemName: info.itemName,
-            itemPcs: info.itemPcs,
-            dateBorrowed: info.dateBorrowed,
-            timeBorrowed: info.timeBorrowed,
-            dateReturn: info.dateReturn,
-            timeClaim: info.timeClaim
-        }])
+
+        if(index > -1){
+            if(!hadAlready){
+                setReceiptData([...receiptData, {
+                    id: index,
+                    userFName: info.userFName,
+                    userLName: info.userLName,
+                    userIdNum: info.userIdNum,
+                    itemName: info.itemName,
+                    itemPcs: info.itemPcs,
+                    dateBorrowed: info.dateBorrowed,
+                    timeBorrowed: info.timeBorrowed,
+                    dateReturn: info.dateReturn,
+                    timeClaim: info.timeClaim
+                }])
+            }
+        }else{
+            setReceiptData([...receiptData, {
+                id: index,
+                userFName: info.userFName,
+                userLName: info.userLName,
+                userIdNum: info.userIdNum,
+                itemName: info.itemName,
+                itemPcs: info.itemPcs,
+                dateBorrowed: info.dateBorrowed,
+                timeBorrowed: info.timeBorrowed,
+                dateReturn: info.dateReturn,
+                timeClaim: info.timeClaim
+            }])
+        } 
+
+        hadAlready = false
     }
 
-    // console.log(studentsData)
+    console.log(studentsData)
     // console.log(index)
 
     return (
@@ -145,7 +164,7 @@ function App(){
                             decItemsData={decItemsData}
                             had_borrow_receipts={had_borrow_receipts}
                             showAllBorrowRcp={showAllBorrowRcp}
-                            receiptData={receiptData}
+                            receiptData={receiptData[indexToPass]}
                             addReceiptData={addReceiptData}
                         />)} 
                     />
