@@ -9,18 +9,17 @@ import Home from './Home'
 function App(){
 
     const [index, setIndex] = useState(-1)
-    const [hadAlready, setHadAlready] = useState(false)
+    //const [hadAlready, setHadAlready] = useState(false)
+    let hadAlready = false
     const [indexToPass, setIndexToPass] = useState(0)
 
     const addIndex = (id) =>{
         if(index >= 0){
             for(let i = 0; i <= index; ++i){
                 if(studentsData[i].studentID === id){
-                    // setHadAlready(!hadAlready, () => {
-                    //     console.log(hadAlready)
-                    // })
-                    setHadAlready(!hadAlready)
-                    //console.log(hadAlready)
+                    //setHadAlready(!hadAlready)
+                    hadAlready = true
+                    console.log(hadAlready)
                     break  
                 }
             } 
@@ -63,6 +62,8 @@ function App(){
                 studentID: info.studentID
             }])
         } 
+
+        hadAlready = false
     } 
 
     const [itemsData, setitemsData] = useState({
@@ -123,8 +124,8 @@ function App(){
         }])
     }
 
-    console.log(studentsData)
-    console.log(index)
+    // console.log(studentsData)
+    // console.log(index)
 
     return (
         <Router basename="inventorymw-a">
