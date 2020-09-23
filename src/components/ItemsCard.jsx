@@ -87,12 +87,19 @@ class ItemsCard extends Component {
         this.refs.pcs_counter_ref.textContent = 0
 
         this.props.showAllBorrowRcp()
+        
+        let itemNameVal
+        if(this.props.receiptData){ 
+            itemNameVal = this.props.receiptData.itemName.push(this.refs.item_name_ref.textContent)
+        }else{
+            itemNameVal = [this.refs.item_name_ref.textContent]
+        }
 
         this.props.addReceiptData({
                 userFName: this.refs.user_fname_ref.textContent,
                 userLName: this.refs.user_lname_ref.textContent,
                 userIdNum: this.refs.user_idNum_ref.textContent,
-                itemName: this.refs.item_name_ref.textContent,
+                itemName: itemNameVal,
                 itemPcs: this.refs.item_pcs_ref.textContent,
                 dateBorrowed: this.refs.date_borrowed_ref.textContent,
                 timeBorrowed: this.refs.time_borrowed_ref.textContent,

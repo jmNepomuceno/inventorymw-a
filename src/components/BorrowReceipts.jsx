@@ -17,14 +17,14 @@ class BorrowReceipts extends Component {
         } 
         let receiptDataVar = this.props.receiptData
 
-        // const borrowRcptCardsComponents = receiptDataVar.map(elem =>{
-        //     return <BorrowReceiptCards key={elem.id} attr={elem} />
-        // })
+        const borrowRcptCardsComponents = receiptDataVar.map(elem =>{
+            return <BorrowReceiptCards key={elem.id} attr={elem} />
+        })
 
         return (
             <div id="main-borrow-receipt-div">
-                {/* {borrowRcptCardsComponents} */}
-                <BorrowReceiptCards key={receiptDataVar.id} attr={receiptDataVar} />
+                {borrowRcptCardsComponents}
+                {/* <BorrowReceiptCards key={receiptDataVar.id} attr={receiptDataVar} /> */}
             </div>
         );
     }

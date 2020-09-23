@@ -25,11 +25,9 @@ function App(){
             } 
 
             if(!hadAlready){
-                console.log("wala")
                 setIndex(index + 1)
                 setIndexToPass(index + 1)
             }else{
-                console.log("meron")
                 for(let elem of studentsData){
                     if(elem.studentID === id){
                         setIndexToPass(elem.idIndex)
@@ -110,41 +108,35 @@ function App(){
 
     const addReceiptData = (info) =>{
 
-        if(index > -1){
-            if(!hadAlready){
-                setReceiptData([...receiptData, {
-                    id: index,
-                    userFName: info.userFName,
-                    userLName: info.userLName,
-                    userIdNum: info.userIdNum,
-                    itemName: info.itemName,
-                    itemPcs: info.itemPcs,
-                    dateBorrowed: info.dateBorrowed,
-                    timeBorrowed: info.timeBorrowed,
-                    dateReturn: info.dateReturn,
-                    timeClaim: info.timeClaim
-                }])
-            }
-        }else{
-            setReceiptData([...receiptData, {
-                id: index,
-                userFName: info.userFName,
-                userLName: info.userLName,
-                userIdNum: info.userIdNum,
-                itemName: info.itemName,
-                itemPcs: info.itemPcs,
-                dateBorrowed: info.dateBorrowed,
-                timeBorrowed: info.timeBorrowed,
-                dateReturn: info.dateReturn,
-                timeClaim: info.timeClaim
-            }])
-        } 
+        setReceiptData([...receiptData, {
+            id: index,
+            userFName: info.userFName,
+            userLName: info.userLName,
+            userIdNum: info.userIdNum,
+            itemName: info.itemName,
+            itemPcs: info.itemPcs,
+            dateBorrowed: info.dateBorrowed,
+            timeBorrowed: info.timeBorrowed,
+            dateReturn: info.dateReturn,
+            timeClaim: info.timeClaim
+        }])
 
-        hadAlready = false
+    }
+    let a = indexToPass
+    let hadAlready_b = false
+    for(let i = indexToPass + 1; i < receiptData.length; ++i){
+        if(receiptData[indexToPass].userIdNum === receiptData[i].userIdNum){
+            a += 1
+            hadAlready_b = true;
+        }
+    }
+    if(hadAlready_b){
+        receiptData.splice(a , 1)
     }
 
-    console.log(studentsData)
-    // console.log(index)
+    console.log(receiptData)
+    //console.log(indexToPass)
+    //console.log(receiptData[indexToPass])
 
     return (
         <Router basename="inventorymw-a">

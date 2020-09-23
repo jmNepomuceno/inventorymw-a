@@ -12,7 +12,7 @@ class ItemsCardMain extends Component {
             return <ItemsCard key={elem.key} attr={elem} 
                     showAllBorrowRcp={this.props.showAllBorrowRcp}
                     hadBorrowRcp={this.props.had_borrow_receipts} addReceiptData={this.props.addReceiptData}
-                    itemsData={this.props.itemsData} decItemsData={this.props.decItemsData}
+                    receiptData={this.props.receiptData} itemsData={this.props.itemsData} decItemsData={this.props.decItemsData}
                     index={this.props.index} studentsData={this.props.studentsData}/>
         })
         return (
