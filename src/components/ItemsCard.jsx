@@ -88,11 +88,21 @@ class ItemsCard extends Component {
 
         this.props.showAllBorrowRcp()
         
-        let itemNameVal
+        let itemNameVal, itemPcsVal, dateBorrowedVal, timeBorrowedVal, dateReturnVal, timeClaimVal
         if(this.props.receiptData){ 
             itemNameVal = this.props.receiptData.itemName.push(this.refs.item_name_ref.textContent)
+            itemPcsVal = this.props.receiptData.itemPcs.push(this.refs.item_pcs_ref.textContent)
+            dateBorrowedVal = this.props.receiptData.dateBorrowed.push(this.refs.date_borrowed_ref.textContent)
+            timeBorrowedVal = this.props.receiptData.timeBorrowed.push(this.refs.time_borrowed_ref.textContent)
+            dateReturnVal = this.props.receiptData.dateReturn.push(this.refs.date_return_ref.textContent)
+            timeClaimVal = this.props.receiptData.timeClaim.push(this.refs.time_claim_ref.textContent)
         }else{
             itemNameVal = [this.refs.item_name_ref.textContent]
+            itemPcsVal = [this.refs.item_pcs_ref.textContent]
+            dateBorrowedVal = [this.refs.date_borrowed_ref.textContent]
+            timeBorrowedVal = [this.refs.time_borrowed_ref.textContent]
+            dateReturnVal = [this.refs.date_return_ref.textContent]
+            timeClaimVal = [this.refs.time_claim_ref.textContent]
         }
 
         this.props.addReceiptData({
@@ -100,11 +110,11 @@ class ItemsCard extends Component {
                 userLName: this.refs.user_lname_ref.textContent,
                 userIdNum: this.refs.user_idNum_ref.textContent,
                 itemName: itemNameVal,
-                itemPcs: this.refs.item_pcs_ref.textContent,
-                dateBorrowed: this.refs.date_borrowed_ref.textContent,
-                timeBorrowed: this.refs.time_borrowed_ref.textContent,
-                dateReturn: this.refs.date_return_ref.textContent,
-                timeClaim: this.refs.time_claim_ref.textContent
+                itemPcs: itemPcsVal,
+                dateBorrowed: dateBorrowedVal,
+                timeBorrowed: timeBorrowedVal,
+                dateReturn: dateReturnVal,
+                timeClaim: timeClaimVal,
             }      
         ) 
     }

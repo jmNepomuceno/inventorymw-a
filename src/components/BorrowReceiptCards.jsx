@@ -18,9 +18,9 @@ class BorrowReceiptCards extends Component {
     render() { 
         return (
             <div className="borrow-receipt-card">
-                <h1> {this.props.attr.dateBorrowed} </h1>
-                <p id="item-name-receipt"> {this.props.attr.itemName} </p>
-                <p id="item-pcs-receipt"> {this.props.attr.itemPcs} {(parseInt(this.props.attr.itemPcs)) > 1 ? 
+                <h1> {this.props.dateBorrowed} </h1>
+                <p id="item-name-receipt"> {this.props.itemName} </p>
+                <p id="item-pcs-receipt"> {this.props.itemPcs} {(parseInt(this.props.itemPcs)) > 1 ? 
                         'pieces' : 'piece'} </p>
 
                 <button onClick={this.openModal}> View details: </button>
@@ -48,19 +48,19 @@ class BorrowReceiptCards extends Component {
                                     </tr>
                                     <tr>
                                         <td><h1>Item Borrowed</h1></td>
-                                        <td>{this.props.attr.itemName}</td>
+                                        <td>{this.props.itemName}</td>
                                     </tr>
                                     <tr>
                                         <td><h1>Item Pieces</h1></td>
-                                        <td>{this.props.attr.itemPcs}</td>
+                                        <td>{this.props.itemPcs}</td>
                                     </tr>
                                     <tr>
                                         <td><h1>Date Borrowed</h1></td>
-                                        <td>{this.props.attr.dateBorrowed}</td>
+                                        <td>{this.props.dateBorrowed}</td>
                                     </tr>
                                     <tr>
                                         <td><h1>Time Borrowed</h1></td>
-                                        <td>{this.props.attr.timeBorrowed}</td>
+                                        <td>{this.props.timeBorrowed}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -74,15 +74,15 @@ class BorrowReceiptCards extends Component {
                                 <tbody>
                                     <tr>
                                         <td><h1>Item to Return</h1></td>
-                                        <td>{this.props.attr.itemName}</td>
+                                        <td>{this.props.itemName}</td>
                                     </tr>
                                     <tr>
                                         <td><h1>Item Pieces</h1></td>
-                                        <td>{this.props.attr.itemPcs}</td>
+                                        <td>{this.props.itemPcs}</td>
                                     </tr>
                                     <tr>
                                         <td><h1>Date to Return</h1></td>
-                                        <td>{this.props.attr.dateReturn}</td>
+                                        <td>{this.props.dateReturn}</td>
                                     </tr>
                                     <tr>
                                         <td><h1>Time to Return</h1></td>
@@ -113,7 +113,7 @@ class BorrowReceiptCards extends Component {
                                 <tbody>
                                     <tr>
                                         <td><h1>Time to Claim</h1></td>
-                                        <td>{this.props.attr.timeClaim}</td>
+                                        <td>{this.props.timeClaim}</td>
                                     </tr>
                                     <tr>
                                         <td><h1>Where to Claim</h1></td>

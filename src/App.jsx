@@ -19,14 +19,14 @@ function App(){
                 if(studentsData[i].studentID === id){
                     //setHadAlready(!hadAlready)
                     hadAlready = true
-                    console.log(hadAlready)
                     break  
                 }
             } 
 
             if(!hadAlready){
                 setIndex(index + 1)
-                setIndexToPass(index + 1)
+                setIndexToPass(index + 1)   
+                setHad_borrow_receipts(false)
             }else{
                 for(let elem of studentsData){
                     if(elem.studentID === id){
