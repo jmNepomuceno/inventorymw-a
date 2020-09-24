@@ -16,6 +16,7 @@ class BorrowReceipts extends Component {
             )
         } 
         let receiptDataVar = this.props.receiptData
+        
         const receiptDataInfo = {
             id: receiptDataVar.id,
             userFName: receiptDataVar.userFName,
@@ -23,18 +24,10 @@ class BorrowReceipts extends Component {
             userIdNum: receiptDataVar.userIdNum
         }
 
-        const borrowRcptCardsComponents = receiptDataVar.itemName.map(elem =>{
-            return <BorrowReceiptCards key={receiptDataInfo.id} 
-                        attr={receiptDataInfo} 
-                        itemName={elem} itemPcs={elem} dateBorrowed={elem}
-                        timeBorrowed={elem} dateReturn={elem} timeClaim={elem}
-                    />
-        })
-
-        const help = []
+        const borrowRcptCardsComponents = []
         for(let i = 0; i < receiptDataVar.itemName.length; ++i){
-            help.push(
-                <BorrowReceiptCards key={receiptDataInfo.id} 
+            borrowRcptCardsComponents.push(
+                <BorrowReceiptCards key={receiptDataVar.key[i]} 
                         attr={receiptDataInfo} 
                         itemName={receiptDataVar.itemName[i]} itemPcs={receiptDataVar.itemPcs[i]} dateBorrowed={receiptDataVar.dateBorrowed[i]}
                         timeBorrowed={receiptDataVar.timeBorrowed[i]} dateReturn={receiptDataVar.dateReturn[i]} timeClaim={receiptDataVar.timeClaim[i]}
@@ -44,7 +37,7 @@ class BorrowReceipts extends Component {
 
         return (
             <div id="main-borrow-receipt-div">
-                {help}
+                {borrowRcptCardsComponents}
                 {/* <BorrowReceiptCards key={receiptDataVar.id} attr={receiptDataVar} /> */}
             </div>
         );

@@ -88,8 +88,9 @@ class ItemsCard extends Component {
 
         this.props.showAllBorrowRcp()
         
-        let itemNameVal, itemPcsVal, dateBorrowedVal, timeBorrowedVal, dateReturnVal, timeClaimVal
+        let itemNameVal, itemPcsVal, dateBorrowedVal, timeBorrowedVal, dateReturnVal, timeClaimVal, keyVal
         if(this.props.receiptData){ 
+            keyVal = this.props.receiptData.key.push(Math.floor(Math.random() * 1000))
             itemNameVal = this.props.receiptData.itemName.push(this.refs.item_name_ref.textContent)
             itemPcsVal = this.props.receiptData.itemPcs.push(this.refs.item_pcs_ref.textContent)
             dateBorrowedVal = this.props.receiptData.dateBorrowed.push(this.refs.date_borrowed_ref.textContent)
@@ -97,6 +98,7 @@ class ItemsCard extends Component {
             dateReturnVal = this.props.receiptData.dateReturn.push(this.refs.date_return_ref.textContent)
             timeClaimVal = this.props.receiptData.timeClaim.push(this.refs.time_claim_ref.textContent)
         }else{
+            keyVal = [Math.floor(Math.random() * 1000)]
             itemNameVal = [this.refs.item_name_ref.textContent]
             itemPcsVal = [this.refs.item_pcs_ref.textContent]
             dateBorrowedVal = [this.refs.date_borrowed_ref.textContent]
@@ -106,6 +108,7 @@ class ItemsCard extends Component {
         }
 
         this.props.addReceiptData({
+                keyId: keyVal,
                 userFName: this.refs.user_fname_ref.textContent,
                 userLName: this.refs.user_lname_ref.textContent,
                 userIdNum: this.refs.user_idNum_ref.textContent,

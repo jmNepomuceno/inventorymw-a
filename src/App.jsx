@@ -106,9 +106,10 @@ function App(){
 
     const [receiptData, setReceiptData] = useState([])
 
-    const addReceiptData = (info) =>{
+    const addReceiptData = (info) =>{    
 
         setReceiptData([...receiptData, {
+            key: info.keyId,
             id: index,
             userFName: info.userFName,
             userLName: info.userLName,
@@ -122,6 +123,8 @@ function App(){
         }])
 
     }
+
+    
     let a = indexToPass
     let hadAlready_b = false
     for(let i = indexToPass + 1; i < receiptData.length; ++i){
@@ -134,7 +137,7 @@ function App(){
         receiptData.splice(a , 1)
     }
 
-    console.log(receiptData)
+    //console.log(receiptData)
     //console.log(indexToPass)
     //console.log(receiptData[indexToPass])
 
