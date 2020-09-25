@@ -38,7 +38,7 @@ class ItemsCard extends Component {
         if(claimMns.toString().length === 1){
             claimMns = "0" + claimMns.toString()    
         }
-        timeToClaim = claimHours + ":" + claimMns + ((claimHours >= 12) ? 'am' : 'pm')
+        timeToClaim = claimHours + ":" + claimMns + ((claimHours >= 12) ? 'pm' : 'am')
     
         
         this.state = {
@@ -54,9 +54,13 @@ class ItemsCard extends Component {
 
 
     incrementClick = () =>{
-        this.refs.pcs_counter_ref.textContent = parseInt(this.refs.pcs_counter_ref.textContent) + 1
-        this.refs.confirm_btn_ref.style.pointerEvents = "auto"
-        this.refs.confirm_btn_ref.style.opacity = "1"
+
+        if(parseInt(this.refs.pcs_counter_ref.textContent) + 1 <= this.props.itemsData[this.props.attr.name]){
+            this.refs.pcs_counter_ref.textContent = parseInt(this.refs.pcs_counter_ref.textContent) + 1
+            this.refs.confirm_btn_ref.style.pointerEvents = "auto"
+            this.refs.confirm_btn_ref.style.opacity = "1"
+        }
+        
     }
 
     decrementClick = () =>{
@@ -124,12 +128,12 @@ class ItemsCard extends Component {
 
     render() { 
         const colorCode = {
-            colorID_1:'#858bf9',
-            colorID_2:'#f8cc3a',
-            colorID_3:'#f99053',
-            btmColor_1:'#0b17f4',
-            btmColor_2:'#c59907',
-            btmColor_3:'#dd5608'
+            colorID_1:'#702e52',
+            colorID_2:'#f2503b',
+            colorID_3:'#febe28',
+            btmColor_1:'#5b2542',
+            btmColor_2:'#f0290f',
+            btmColor_3:'#feb201'
         }
 
         const imgPath = {
