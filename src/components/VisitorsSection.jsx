@@ -17,6 +17,10 @@ class VisitorsSection extends Component {
         this.state.is_log_showed ? this.refs.visitorsDiv.style.left = "315px" : this.refs.visitorsDiv.style.left = "0px" 
         this.state.is_log_showed ? this.refs.visitorsCardRef.style.left = '0' : this.refs.visitorsCardRef.style.left = '-315px'
         this.setState({is_log_showed: !this.state.is_log_showed})
+
+        // this.refs.first_name_ref.value = ""
+        // this.refs.last_name_ref.value = ""
+        // this.refs.id_name_ref.value = ""
     }
 
     borrowClick = (id) =>{
