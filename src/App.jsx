@@ -69,7 +69,7 @@ function App(){
             Projector: 15,
             Marker: 50,
             Books: 100,
-            Eraser: 30
+            Erasers: 30
     })
 
     const decItemsData = (item, pcs) =>{

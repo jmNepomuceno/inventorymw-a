@@ -147,7 +147,6 @@ class ItemsCard extends Component {
         const firstName = this.props.studentsData.firstName
         const surName = this.props.studentsData.surName
         const studentID = this.props.studentsData.studentID
-
         return (
                 <div className="items-card" 
                     id={this.props.attr.id} 
