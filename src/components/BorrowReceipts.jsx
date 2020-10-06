@@ -31,6 +31,7 @@ class BorrowReceipts extends Component {
                         attr={receiptDataInfo} 
                         itemName={receiptDataVar.itemName[i]} itemPcs={receiptDataVar.itemPcs[i]} dateBorrowed={receiptDataVar.dateBorrowed[i]}
                         timeBorrowed={receiptDataVar.timeBorrowed[i]} dateReturn={receiptDataVar.dateReturn[i]} timeClaim={receiptDataVar.timeClaim[i]}
+                        delReceiptData={this.props.delReceiptData}
                 />
             )
         }

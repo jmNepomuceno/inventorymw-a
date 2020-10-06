@@ -15,7 +15,14 @@ class BorrowReceiptCards extends Component {
         this.setState({isModalOpen: !this.state.isModalOpen})
     }
 
+    returnBtnClicked = (userId, itemName) =>{
+        alert('Successfully Returned the Item. Thank you for using our Site.')
+        this.props.delReceiptData(userId, itemName);
+        this.closeModal()
+    }
+
     render() { 
+
         return (
             <div className="borrow-receipt-card">
                 <h1> {this.props.dateBorrowed} </h1>
@@ -138,6 +145,15 @@ class BorrowReceiptCards extends Component {
                                 <span></span>
                                 EXIT
                             </button>
+
+                            <button id="return-viewing-rcpt-btn" onClick={() => this.returnBtnClicked(this.props.attr.id, this.props.itemName)}>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                RETURN THE ITEM
+                            </button>
+
                         </div>
                     </div>
                 </Modal>

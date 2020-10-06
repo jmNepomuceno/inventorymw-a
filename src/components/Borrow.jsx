@@ -24,7 +24,8 @@ function Borrow(props){
 
                          <Route path="/borrow/borrow-receipt" exact render={() => (
                              <BorrowReceipts had_borrow_receipts={props.had_borrow_receipts}
-                                receiptData={receiptsDataVar} studentsData={props.studentsData}  />
+                                receiptData={receiptsDataVar} studentsData={props.studentsData}
+                                delReceiptData={props.delReceiptData}  />
                          )} />
                      </Switch>
                  </main>

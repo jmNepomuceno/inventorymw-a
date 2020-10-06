@@ -124,6 +124,24 @@ function App(){
 
     }
 
+    const delReceiptData = (userId, itemName) =>{    
+        console.log(userId)
+        for(let i = 0; i < receiptData.length; ++i){
+            if(i === parseInt(userId)){
+                let itemIndexToDel = 0;
+                for(let j = 0; j < receiptData[i].itemName.length; ++j){
+                    if(itemName === receiptData[i].itemName[j]){
+                        itemIndexToDel = j
+                        break
+                    }
+                }
+                receiptData[i].itemName.splice(itemIndexToDel,1)
+                break
+            }
+        }
+        console.log(receiptData)
+    }
+
     
     let a = indexToPass
     let hadAlready_b = false
@@ -137,7 +155,7 @@ function App(){
         receiptData.splice(a , 1)
     }
 
-    //console.log(receiptData)
+    console.log(receiptData)
     //console.log(indexToPass)
     //console.log(receiptData[indexToPass])
 
@@ -161,6 +179,7 @@ function App(){
                             showAllBorrowRcp={showAllBorrowRcp}
                             receiptData={receiptData[indexToPass]}
                             addReceiptData={addReceiptData}
+                            delReceiptData={delReceiptData}
                         />)} 
                     />
                     <Route path="/admin" render={(props) => (<Admin/>)} />

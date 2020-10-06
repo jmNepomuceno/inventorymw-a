@@ -17,8 +17,13 @@ class ItemsCard extends Component {
         date = (todayDate.getMonth() + 1) +  '-' + todayDate.getDate() +  '-' + todayDate.getFullYear();
 
         let todayTime = new Date(),
+        // if(todayTime.getMinutes().length === 1){
+        //     doubleDigitMins = "0" + todayTime.getMinutes()
+        // }
         time = ((todayTime.getHours() > 12) ? todayTime.getHours() - 12 : todayTime.getHours()) + ':' + todayTime.getMinutes() + 
             ((todayTime.getHours() >= 12) ? 'pm' : 'am')
+
+        
 
         let claimTime = new Date(),
         claimHours = claimTime.getHours(),
