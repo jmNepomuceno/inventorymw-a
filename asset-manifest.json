@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/inventorymw-a/static/css/main.cb6a5171.chunk.css",
-    "main.js": "/inventorymw-a/static/js/main.bd5fc271.chunk.js",
-    "main.js.map": "/inventorymw-a/static/js/main.bd5fc271.chunk.js.map",
+    "main.css": "/inventorymw-a/static/css/main.f833e665.chunk.css",
+    "main.js": "/inventorymw-a/static/js/main.f7e9d15d.chunk.js",
+    "main.js.map": "/inventorymw-a/static/js/main.f7e9d15d.chunk.js.map",
     "runtime-main.js": "/inventorymw-a/static/js/runtime-main.762b3069.js",
     "runtime-main.js.map": "/inventorymw-a/static/js/runtime-main.762b3069.js.map",
     "static/js/2.8caa9bf4.chunk.js": "/inventorymw-a/static/js/2.8caa9bf4.chunk.js",
     "static/js/2.8caa9bf4.chunk.js.map": "/inventorymw-a/static/js/2.8caa9bf4.chunk.js.map",
     "index.html": "/inventorymw-a/index.html",
-    "precache-manifest.a261ec784014cb47b527e50119fe54bb.js": "/inventorymw-a/precache-manifest.a261ec784014cb47b527e50119fe54bb.js",
+    "precache-manifest.10fd015037a8931688af05a5a3e8747a.js": "/inventorymw-a/precache-manifest.10fd015037a8931688af05a5a3e8747a.js",
     "service-worker.js": "/inventorymw-a/service-worker.js",
-    "static/css/main.cb6a5171.chunk.css.map": "/inventorymw-a/static/css/main.cb6a5171.chunk.css.map",
+    "static/css/main.f833e665.chunk.css.map": "/inventorymw-a/static/css/main.f833e665.chunk.css.map",
     "static/js/2.8caa9bf4.chunk.js.LICENSE.txt": "/inventorymw-a/static/js/2.8caa9bf4.chunk.js.LICENSE.txt",
     "static/media/book.png": "/inventorymw-a/static/media/book.286ccc45.png",
     "static/media/bpsuLogo.png": "/inventorymw-a/static/media/bpsuLogo.d7589e15.png",
@@ -25,7 +25,7 @@
   "entrypoints": [
     "static/js/runtime-main.762b3069.js",
     "static/js/2.8caa9bf4.chunk.js",
-    "static/css/main.cb6a5171.chunk.css",
-    "static/js/main.bd5fc271.chunk.js"
+    "static/css/main.f833e665.chunk.css",
+    "static/js/main.f7e9d15d.chunk.js"
   ]
 }
