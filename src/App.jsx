@@ -124,18 +124,22 @@ function App(){
 
     }
 
-    const delReceiptData = (userId, itemName) =>{    
-        console.log(userId)
+    const delReceiptData = (userId, itemBorrowData) =>{    
         for(let i = 0; i < receiptData.length; ++i){
             if(i === parseInt(userId)){
                 let itemIndexToDel = 0;
                 for(let j = 0; j < receiptData[i].itemName.length; ++j){
-                    if(itemName === receiptData[i].itemName[j]){
+                    if(itemBorrowData.itemName === receiptData[i].itemName[j]){
                         itemIndexToDel = j
                         break
                     }
                 }
                 receiptData[i].itemName.splice(itemIndexToDel,1)
+                receiptData[i].itemPcs.splice(itemIndexToDel,1)
+                receiptData[i].dateBorrowed.splice(itemIndexToDel,1)
+                receiptData[i].timeBorrowed.splice(itemIndexToDel,1)
+                receiptData[i].dateReturn.splice(itemIndexToDel,1)
+                receiptData[i].timeClaim.splice(itemIndexToDel,1)
                 break
             }
         }

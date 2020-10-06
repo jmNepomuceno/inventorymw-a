@@ -15,9 +15,16 @@ class BorrowReceiptCards extends Component {
         this.setState({isModalOpen: !this.state.isModalOpen})
     }
 
-    returnBtnClicked = (userId, itemName) =>{
+    returnBtnClicked = (userId) =>{
         alert('Successfully Returned the Item. Thank you for using our Site.')
-        this.props.delReceiptData(userId, itemName);
+        this.props.delReceiptData(userId, {
+            itemName: this.props.itemName,
+            itemPcs: this.props.itemPcs,
+            itemBorrowed: this.props.dateBorrowed,
+            itemTimeBorrowed: this.props.timeBorrowed,
+            itemDateToReturn: this.props.dateReturn,
+            itemTimeClaim: this.props.timeClaim
+        });
         this.closeModal()
     }
 
@@ -146,7 +153,7 @@ class BorrowReceiptCards extends Component {
                                 EXIT
                             </button>
 
-                            <button id="return-viewing-rcpt-btn" onClick={() => this.returnBtnClicked(this.props.attr.id, this.props.itemName)}>
+                            <button id="return-viewing-rcpt-btn" onClick={() => this.returnBtnClicked(this.props.attr.id)}>
                                 <span></span>
                                 <span></span>
                                 <span></span>
