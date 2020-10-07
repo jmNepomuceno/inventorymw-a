@@ -90,10 +90,7 @@ function App(){
 
         }else if(item === "Eraser"){
             setitemsData({...itemsData , Eraser: itemsData.Eraser - pcs})
-
-
-        }
-        
+        }  
     }
 
     const [had_borrow_receipts, setHad_borrow_receipts] = useState(false);
@@ -135,15 +132,41 @@ function App(){
                         break
                     }
                 }
-                
+
+                var itemPcsVal = parseInt(receiptData[i].itemPcs[itemIndexToDel])
+
+                if(receiptData[i].itemName[itemIndexToDel] === "Laptop"){
+                    setitemsData({...itemsData , Laptop: itemsData.Laptop + itemPcsVal})
+        
+                }else if(receiptData[i].itemName[itemIndexToDel] === "Projector"){
+                    setitemsData({...itemsData , Projector: itemsData.Projector + itemPcsVal})
+        
+        
+                }else if(receiptData[i].itemName[itemIndexToDel] === "Marker"){
+                    setitemsData({...itemsData , Marker: itemsData.Marker + itemPcsVal})
+        
+        
+                }else if(receiptData[i].itemName[itemIndexToDel] === "Books"){
+                    setitemsData({...itemsData , Books: itemsData.Books + itemPcsVal})
+        
+        
+                }else if(receiptData[i].itemName[itemIndexToDel] === "Eraser"){
+                    setitemsData({...itemsData , Eraser: itemsData.Eraser + itemPcsVal})
+                }  
+
                 receiptData[i].itemName.splice(itemIndexToDel,1)
                 receiptData[i].itemPcs.splice(itemIndexToDel,1)
                 receiptData[i].dateBorrowed.splice(itemIndexToDel,1)
                 receiptData[i].timeBorrowed.splice(itemIndexToDel,1)
                 receiptData[i].dateReturn.splice(itemIndexToDel,1)
                 receiptData[i].timeClaim.splice(itemIndexToDel,1)
+
                 break
             }
+        }
+
+        if(receiptData[userId].itemName.length === 0){
+            setHad_borrow_receipts(false)
         }
 
         console.log(receiptData)

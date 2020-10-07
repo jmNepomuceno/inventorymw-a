@@ -202,19 +202,19 @@ class ItemsCard extends Component {
                                             </tr>
                                             <tr>
                                                 <td><h1>Item Borrowed</h1></td>
-                                                <td ref="item_name_ref"> {this.state.userBorrowedItemName} </td>
+                                                <td ref="item_name_ref">{this.state.userBorrowedItemName}</td>
                                             </tr>
                                             <tr>
                                                 <td><h1>Item Pieces</h1></td>
-                                                <td ref="item_pcs_ref"> {this.state.userBorrowedItemPcs} </td>
+                                                <td ref="item_pcs_ref">{this.state.userBorrowedItemPcs}</td>
                                             </tr>
                                             <tr>
                                                 <td><h1>Date Borrowed</h1></td>
-                                                <td ref="date_borrowed_ref"> {this.state.currentDate} </td>
+                                                <td ref="date_borrowed_ref">{this.state.currentDate}</td>
                                             </tr>
                                             <tr>
                                                 <td><h1>Time Borrowed</h1></td>
-                                                <td ref="time_borrowed_ref"> {this.state.currentTime} </td>
+                                                <td ref="time_borrowed_ref">{this.state.currentTime}</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -228,15 +228,15 @@ class ItemsCard extends Component {
                                         <tbody>
                                             <tr>
                                                 <td><h1>Item to Return</h1></td>
-                                                <td> {this.state.userBorrowedItemName} </td>
+                                                <td>{this.state.userBorrowedItemName}</td>
                                             </tr>
                                             <tr>
                                                 <td><h1>Item Pieces</h1></td>
-                                                <td> {this.state.userBorrowedItemPcs} </td>
+                                                <td>{this.state.userBorrowedItemPcs}</td>
                                             </tr>
                                             <tr>
                                                 <td><h1>Date to Return</h1></td>
-                                                <td ref="date_return_ref"> {this.state.dateToReturn} </td>
+                                                <td ref="date_return_ref">{this.state.dateToReturn}</td>
                                             </tr>
                                             <tr>
                                                 <td><h1>Time to Return</h1></td>
@@ -267,7 +267,7 @@ class ItemsCard extends Component {
                                         <tbody>
                                             <tr>
                                                 <td><h1>Time to Claim</h1></td>
-                                                <td ref="time_claim_ref"> {this.state.timeToClaim} - 3:00pm </td>
+                                                <td ref="time_claim_ref">{this.state.timeToClaim} - 3:00pm</td>
                                             </tr>
                                             <tr>
                                                 <td><h1>Where to Claim</h1></td>
