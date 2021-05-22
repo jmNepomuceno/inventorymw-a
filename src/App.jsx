@@ -12,7 +12,7 @@ function App(){
     //const [hadAlready, setHadAlready] = useState(false)
     let hadAlready = false
     const [indexToPass, setIndexToPass] = useState(0)
-
+    alert('Zoom ur browser at 110%')
     const addIndex = (id) =>{
         if(index >= 0){
             for(let i = 0; i <= index; ++i){
