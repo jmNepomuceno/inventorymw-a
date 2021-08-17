@@ -1,3 +1,8 @@
+Inventory Management Website
+
+## html / css / js / react Pratice Project using React
+## Link : https://jmnepomuceno.github.io/inventorymw-a/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
