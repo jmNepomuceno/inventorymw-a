@@ -1,4 +1,4 @@
-Inventory Management Website
+# Inventory Management Website (doesn't fit properly on mobile devices)
 
 ## html / css / js / react Pratice Project using React (try to zoom in or zoom out the screen if the layout is a mess)
 ## Link : https://jmnepomuceno.github.io/inventorymw-a/
